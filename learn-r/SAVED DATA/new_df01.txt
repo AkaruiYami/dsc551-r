@@ -1,0 +1,5 @@
+"Name";"Gender";"Age"
+"1";"Akarui";"Male";23
+"2";"Yami";"Male";23
+"3";"Kuro";"Male";20
+"4";"Aya";"Female";26
