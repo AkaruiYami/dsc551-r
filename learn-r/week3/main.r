@@ -122,3 +122,11 @@ attach(bmi_data)
 
 # Average weight grouped by gender
 round(tapply(weight, gender, mean), 2)
+
+# SORT / RANK / ORDER function
+s <- c(10, 16, 6, 20, 18)
+sort(s)
+sort(s, decreasing = TRUE)
+rev(sort(s))
+order(s) # sort element and return the element's position in unsorted vector
+rank(s) # return the element's position in sorted vector
