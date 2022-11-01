@@ -51,3 +51,43 @@ barplot(table(gender), col = col[1:2], ylab = "Frequency", xlab = "Gender", ylim
 x_range <- c(0, ceiling(max(table(Program)) / 5) * 5)
 x_range
 barplot(table(Program), col = col, xlab = "Frequency", ylab = "Program", xlim = x_range, horiz = T)
+
+# Stack barchart
+table1 <- table(gender, Program)
+
+barplot(table1) # basic stack barchart
+
+col <- c("cyan", "pink")
+
+par(mfrow = c(1, 2))
+
+barplot(table1, ylim = c(0, 14), xlab = "Program", ylab = "Frequency", col = col, legend = c("Male", "Female"))
+
+barplot(table1, ylim = c(0, 8), xlab = "Program", ylab = "Frequency", col = col, legend = c("Male", "Female"), beside = T)
+
+par(mfrow = c(1, 1))
+
+
+# Data Visualization
+# 2) Presenting numerical data
+# Stem and Leaf
+library(MASS)
+data(road)
+str(road)
+attach(road)
+
+stem(temp, scale = 0.5)
+
+# Boxplot *!
+str(bmi_data)
+
+par(mfrow = c(1, 2))
+
+boxplot(height, main = "Height", col = "red", horizontal = T)
+boxplot(weight, main = "Weight", col = "blue", horizontal = T)
+
+# display boxplot of height according to gender
+par(mar = c(10, 10, 10, 10))
+boxplot(height ~ gender, main = "Weight", col = c("cyan", "pink"), cex.main = 3, cex.lab = 1.5)
+
+boxplot(height ~ Program, main = "Weight", cex.main = 3, cex.lab = 1.5)
