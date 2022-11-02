@@ -91,3 +91,52 @@ par(mar = c(10, 10, 10, 10))
 boxplot(height ~ gender, main = "Weight", col = c("cyan", "pink"), cex.main = 3, cex.lab = 1.5)
 
 boxplot(height ~ Program, main = "Weight", cex.main = 3, cex.lab = 1.5)
+
+# histogram
+hist(weight, col = "red")
+hist(height, col = "blue", ylim = c(0, 14))
+
+# normal curve
+hist(weight, col = "red", prob = T)
+curve(dnorm(x, mean = mean(weight), sd = sd(weight)), add = T, lwd = 2)
+
+hist(height, col = "blue", prob = T, ylim = c(0, 0.04))
+curve(dnorm(x, mean = mean(height), sd = sd(height)), add = T, lwd = 3)
+
+# Normal distribution plot
+# using plot(density(var)) function
+plot(density(weight), main = "Density Estimate of Weight", xlab = "Weighy (kg)")
+plot(density(height), main = "Density Estimate of Height", xlab = "Height (cm)")
+
+# scatter plot
+ozone <- read.csv("learn-r/SAMPLE DATA/ozone.csv", header = T)
+str(ozone)
+attach(ozone)
+
+plot(wind, temp)
+plot(wind, temp, col = "blue", pch = "x", cex = 2)
+
+abline(lm(temp ~ wind), col = "red", lwd = 2)
+# ~ Interpretation: There is negatie relationship between temperature and wind
+
+
+# Normal Quantile - Quantile plot  (QQ Plot)
+# to determine the skewness of data
+
+qqnorm(wind, cex = 1.5, lwd = 2)
+qqline(wind, col = "red", lwd = 2)
+# ~ Interpretation: Since most of the points lie on the straight line, therefore the wind dataset is normally distributed. Some outliers detected at the upper tails.
+
+# Cumulative frequency distribution (ogive)
+plot(ecdf(wind))
+plot(ecdf(wind), col.hor = "white")
+
+range <- 0:20
+dist <- pnorm(range, mean = mean(wind), sd = sd(wind))
+lines(range, dist)
+
+x1 <- c(10, 14, 32, 17, 22)
+x2 <- c(4, 22, 16, 38, 22)
+plot(x1, x2, cex = 2, lwd = 2)
+
+text(x1, x2, c("A", "B", "C", "D"), pos=3, cex = 2)
