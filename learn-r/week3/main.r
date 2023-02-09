@@ -113,7 +113,7 @@ library(haven)
 write_sav(new_df, "learn-r/SAVED DATA/new_df01.sav")
 # Apply family function
 
-# apply()
+# apply() apply a function to an array or matrix and will return an vector / array
 # tapply() apply function according to factor levels
 # sapply() for vector data structure. output is a vector
 # lapply() for list data structure. output is a list
