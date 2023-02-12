@@ -79,7 +79,7 @@ shapiro.test(rural)
 # Visualize data
 qqnorm(rural)
 qqline(rural, col = "red")
-# ~ Interpretation: Since most of the points lie on the straight line, the rural datasete is normally distributed.
+# ~ Interpretation: Since most of the points lie on the straight line, the rural dataset is normally distributed.
 
 # One sample t-test
 oct <- read.csv("learn-r/SAMPLE DATA/Octopus.csv", header = T, sep = ";")

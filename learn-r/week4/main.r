@@ -88,7 +88,7 @@ boxplot(weight, main = "Weight", col = "blue", horizontal = T)
 
 # display boxplot of height according to gender
 par(mar = c(10, 10, 10, 10))
-boxplot(height ~ gender, main = "Weight", col = c("cyan", "pink"), cex.main = 3, cex.lab = 1.5)
+boxplot(height ~ gender, main = "Height", col = c("cyan", "pink"), cex.main = 3, cex.lab = 1.5)
 
 boxplot(height ~ Program, main = "Weight", cex.main = 3, cex.lab = 1.5)
 
